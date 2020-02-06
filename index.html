@@ -3,15 +3,28 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script>
+            function startTime() {
+                var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var ampm = h >= 12 ? 'pm' : 'am';
+                m = checkTime(m);
+                document.getElementById('txt').innerHTML =
+                    h + ":" + m + ' ' + ampm;
+                var t = setTimeout(startTime, 500);
+            }
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+        </script>
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
         <title>Dashboard</title>
     </head>
 
-    <body>
+    <body onload="startTime()">
         <header>
             <div>
                 <div class="name">
@@ -56,12 +69,12 @@
         </header>
 
         <main class="grid">
-            <div class="head">
-                <h1>Hello Ian,</h1>
-            </div>
-
             <div class="about">
                 <h1>Welcome</h1>
+            </div>
+
+            <div class="clock">
+                <div id="txt"></div>
             </div>
 
             <div class="today">
@@ -69,7 +82,10 @@
             </div>
 
             <div class="weather">
-
+                <a class="weatherwidget-io" href="https://forecast7.com/en/35d15n90d05/memphis/?unit=us" data-label_1="MEMPHIS" data-label_2="WEATHER" data-font="Noto Sans" data-theme="original" data-basecolor="#232549" data-textcolor="#dbdde3" data-highcolor="#b56576" data-lowcolor="#6d597a" data-mooncolor="#dbdde3" data-cloudcolor="#dbdde3" data-snowcolor="#dbdde3" >MEMPHIS WEATHER</a>
+                <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                </script>
             </div>
 
             <div class="calendar">
