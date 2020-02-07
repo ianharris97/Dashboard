@@ -8,6 +8,7 @@ html {
     margin: 0;
     box-sizing: border-box;
 }
+
 body {
     display: flex;
     background: #161233;
@@ -15,12 +16,12 @@ body {
 
 /*Universal Styles*/
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     margin: 2rem 0rem;
 }
 
 p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin: 0.5rem;
 }
 
@@ -59,7 +60,7 @@ nav div {
 }
 
 nav div:hover {
-    background: #313466;
+    background: #373a73;
     border-left: 0.25rem solid #dbdde3;
 }
 
@@ -91,17 +92,33 @@ main {
             "calendar calendar projects projects"
 ;
     grid-template-rows: 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 1.5rem;
 
 }
 
+/*About Section*/
 .about {
     grid-area: about;
     background: #232549;
     color: #dbdde3;
     border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
+.about h1 {
+    margin: 2rem 2rem 1rem 2rem;
+}
+
+.about p {
+    margin: 1rem 2rem 2rem 2rem;
+}
+
+/*Time Section*/
 .clock {
     grid-area: clock;
     background: #232549;
@@ -115,13 +132,59 @@ main {
     align-items: center;
 }
 
+/*Today's Events Section*/
 .today {
     grid-area: today;
     background: #232549;
     /*border: 0.2rem solid #E2E2E2;*/
     border-radius: 1rem;
+
+    color: #dbdde3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.today-date {
+    text-align: center;
+    min-width: 30%;
+}
+
+.today-date h2 {
+    font-size: 5rem;
+}
+
+.events {
+    min-width: 60%;
+}
+
+.event {
+    display: flex;
+    padding: 2rem 0rem;
+    font-size: 1.25rem;
+}
+
+.bullet-one {
+    color: #fc525f;
+}
+
+.bullet-two {
+    color: #70c66d;
+}
+
+.vl {
+    border-left: 2px solid #dbdde3;
+    height: 80%;
+    margin: 0rem 2rem 0rem 0rem;
+}
+
+.hr {
+    border-bottom: 2px solid #dbdde3;
+    width: 90%;
+    margin: 0rem;
+}
+/*Weather Section*/
 .weather {
     grid-area: weather;
     background: #232549;
@@ -132,6 +195,7 @@ main {
     border-radius: 1rem;
 }
 
+/*Calendar Section*/
 .calendar {
     grid-area: calendar;
     background: #232549;
@@ -140,6 +204,7 @@ main {
 
 }
 
+/*Projects Section*/
 .projects {
     grid-area: projects;
     background: #232549;

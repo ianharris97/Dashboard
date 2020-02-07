@@ -10,6 +10,7 @@
                 var m = today.getMinutes();
                 var ampm = h >= 12 ? 'pm' : 'am';
                 m = checkTime(m);
+                h = h % 12;
                 document.getElementById('txt').innerHTML =
                     h + ":" + m + ' ' + ampm;
                 var t = setTimeout(startTime, 500);
@@ -19,8 +20,26 @@
                 return i;
             }
         </script>
+        <script>
+            window.onload = setInterval(clock,1000);
+            function clock()
+            {
+                var d = new Date();
+                var date = d.getDate();
+                var month = d.getMonth();
+                var monthArr = ["Jan", "Feb","Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct",
+                    "Nov","Dec"];
+                month = monthArr[month];
+                document.getElementById("month").innerHTML= month;
+                if (date <= 10) {
+                    document.getElementById("date").innerHTML = "0" + date;
+                } else {
+                    document.getElementById("date").innerHTML = date;
+                }
+            }
+        </script>
         <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
         <title>Dashboard</title>
     </head>
 
@@ -32,7 +51,7 @@
                 </div>
                 <nav>
                     <div>
-                        <a href="">
+                        <a href="https://calendar.google.com/calendar/embed?src=go.olemiss.edu_ak521o2og6cnpifdmdps62fu3g%40group.calendar.google.com&ctz=America%2FChicago" target="_blank">
                             <figure class="header-icons">
                                 <img src="./assets/calendar.svg" alt="">
                             </figure>
@@ -40,7 +59,7 @@
                         </a>
                     </div>
                     <div>
-                        <a href="">
+                        <a href="https://github.com/ianharris97" target="_blank">
                             <figure class="header-icons">
                                 <img src="./assets/projects.svg" alt="">
                             </figure>
@@ -48,7 +67,7 @@
                         </a>
                     </div>
                     <div>
-                        <a href="">
+                        <a href="https://www.linkedin.com/in/johnianharris" target="_blank">
                             <figure class="header-icons">
                                 <img src="./assets/profile.svg" alt="">
                             </figure>
@@ -71,6 +90,14 @@
         <main class="grid">
             <div class="about">
                 <h1>Welcome</h1>
+                <p>
+                    My name is Ian Harris and I am a soon to be a college grad from the University of Mississippi
+                    with a bachelor's of Multi-Disciplinary Studies with minors in Computer Science, Digital Media
+                    Studies emphasis Graphic Design, and General Business. This dashboard will show my current
+                    projects I am working on with links to my Github repositories to view them if you so wish. The
+                    dashboard will also display my calendar and events for the day and month. If you want to learn
+                    more about me, please click the profile link to view my linkedin page.
+                </p>
             </div>
 
             <div class="clock">
@@ -78,7 +105,33 @@
             </div>
 
             <div class="today">
+                <div class="today-date">
+                    <h2 id="month" class="month"></h2>
+                    <h2 id="date" class="date"></h2>
+                </div>
 
+                <div class="vl"></div>
+
+                <div class="events">
+                    <div class="event">
+                        <h3 class="bullet-one">• &nbsp;</h3>
+                        <h3>1:00pm &nbsp; : &nbsp; <strong>GB 320: Supply Chain Management</strong></h3>
+                    </div>
+
+                    <div class="hr"></div>
+
+                    <div class="event">
+                        <h3 class="bullet-two">• &nbsp;</h3>
+                        <h3>6:00pm &nbsp; : &nbsp; <strong>Web Programming, Tech901</strong></h3>
+                    </div>
+
+                    <div class="hr"></div>
+
+                    <div class="event">
+                        <h3 class="bullet-one">• &nbsp;</h3>
+                        <h3>11:59pm &nbsp; : &nbsp; <strong>GB 320 Quiz 5 Due</strong></h3>
+                    </div>
+                </div>
             </div>
 
             <div class="weather">
@@ -93,7 +146,19 @@
             </div>
 
             <div class="projects">
-
+                <h1>Projects</h1>
+                <div class="project">
+                    <a href="https://github.com/ianharris97/Either-Or.git" target="_blank">Either Or</a>
+                    <h3>Completed</h3>
+                </div>
+                <div class="project">
+                    <a href="https://github.com/Tech901/working-with-tables-ianharris97" target="_blank">Working With Tables</a>
+                    <h3>Completed</h3>
+                </div>
+                <div class="project">
+                    <a href="https://github.com/ianharris97/Dashboard.git" target="_blank">Dashboard</a>
+                    <h3>In-progress</h3>
+                </div>
             </div>
         </main>
     </body>
