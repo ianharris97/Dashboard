@@ -89,8 +89,7 @@ main {
     grid-template-areas:
             "about about about clock"
             "today today weather weather"
-            "calendar calendar projects projects"
-;
+            "calendar calendar projects projects";
     grid-template-rows: 1fr 1fr 2fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 1.5rem;
@@ -201,13 +200,166 @@ main {
     background: #232549;
     /*border: 0.2rem solid #E2E2E2;*/
     border-radius: 1rem;
+}
 
+#cmonth {
+    color: #dbdde3;
+    margin: 2rem 2rem 1rem 2rem
+}
+
+.the-cal {
+    height: 100%;
+}
+
+.row {
+    display: flex;
+    align-content: center;
+    width: 100%;
+    height: 15%;
+}
+.special-row {
+    display: flex;
+    align-content: center;
+    width: 100%;
+    color: #dbdde3;
+}
+
+.special-square {
+    width: 13%;
+    text-align: center;
+    margin: 0 1%;
+}
+
+.square {
+    width: 13%;
+    height: 94%;
+    margin: 1%;
+
+    background-color: #373a73;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.square p {
+    text-align: center;
+    color: #dbdde3;
 }
 
 /*Projects Section*/
 .projects {
     grid-area: projects;
     background: #232549;
-    /*border: 0.2rem solid #E2E2E2;*/
     border-radius: 1rem;
+    color: #dbdde3;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.projects a {
+  text-decoration: none;
+  color: #dbdde3;
+  font-size: 1.5rem;
+  padding: 2rem;
+}
+
+.project:hover {
+    background: #373a73;
+    border-left: 0.25rem solid #dbdde3;
+    width: 100%;
+}
+
+.projects h1 {
+  padding: 0rem 2rem;
+}
+
+.projects h2 {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+}
+
+.projects h3 {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.projects hr {
+  border-bottom: 2px solid #dbdde3;
+    width: 96%;
+    margin: auto;
+}
+
+.name-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0rem;
+}
+
+.project {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    align-content: center;
+}
+
+
+
+/*Media Queries*/
+@media only screen and (max-width: 768px) {
+    header {
+        width: 15rem;
+    }
+
+    nav a {
+        display: flex;
+        align-items: center;
+    }
+
+    nav div {
+        width: 15rem;
+    }
+
+    .header-icons {
+        width: 2rem;
+        margin: 0.75rem;
+    }
+
+    .info img {
+        width: 7.5rem;
+    }
+
+    header p {
+        font-size: 1.25rem;
+    }
+
+    main {
+        display: grid;
+        grid-template-areas:
+                "about about "
+                "clock today"
+                "weather weather"
+                "calendar calendar"
+                "projects projects";
+        grid-template-rows: 1fr 1fr 1fr 2fr 2fr;
+        grid-template-columns: 0.25fr 0.75fr;
+
+    }
+
+    .clock {
+        font-size: 2.5rem;
+    }
+
+    .today-date h2{
+        font-size: 3.5rem;
+    }
+
+    .event {
+        display: flex;
+        padding: 1.25rem 0rem;
+        font-size: 1.25rem;
+    }
 }

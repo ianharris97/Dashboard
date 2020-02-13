@@ -29,13 +29,17 @@
                 var month = d.getMonth();
                 var monthArr = ["Jan", "Feb","Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct",
                     "Nov","Dec"];
-                month = monthArr[month];
-                document.getElementById("month").innerHTML= month;
+                dmonth = monthArr[month];
+                document.getElementById("month").innerHTML= dmonth;
                 if (date <= 10) {
                     document.getElementById("date").innerHTML = "0" + date;
                 } else {
                     document.getElementById("date").innerHTML = date;
                 }
+                var cmonthArr = ["January", "February","March", "April", "May", "June", "July", "August", "September",
+                    "October", "November","December"];
+                cmonth = cmonthArr[month]
+                document.getElementById("cmonth").innerHTML = cmonth;
             }
         </script>
         <link rel="stylesheet" href="style.css">
@@ -142,21 +146,109 @@
             </div>
 
             <div class="calendar">
-
+                <h1 id="cmonth"></h1>
+                <div class="the-cal">
+                    <div class="special-row">
+                        <div class="special-square"><p>S</p></div>
+                        <div class="special-square"><p>M</p></div>
+                        <div class="special-square"><p>T</p></div>
+                        <div class="special-square"><p>W</p></div>
+                        <div class="special-square"><p>Th</p></div>
+                        <div class="special-square"><p>F</p></div>
+                        <div class="special-square"><p>S</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"><p>1</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="square"><p>2</p></div>
+                        <div class="square"><p>3</p>
+                            <h3 class="bullet-two">•</h3>
+                        </div>
+                        <div class="square"><p>4</p></div>
+                        <div class="square"><p>5</p>
+                            <h3 class="bullet-two">•</h3>
+                        </div>
+                        <div class="square"><p>6</p></div>
+                        <div class="square"><p>7</p>
+                            <h3 class="bullet-one">•</h3>
+                        </div>
+                        <div class="square"><p>8</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="square"><p>9</p></div>
+                        <div class="square"><p>10</p>
+                            <h3 class="bullet-two">•</h3>
+                        </div>
+                        <div class="square"><p>11</p></div>
+                        <div class="square"><p>12</p>
+                            <h3 class="bullet-two">•</h3>
+                        </div>
+                        <div class="square"><p>13</p></div>
+                        <div class="square"><p>14</p></div>
+                        <div class="square"><p>15</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="square"><p>16</p></div>
+                        <div class="square"><p>17</p>
+                            <h3 class="bullet-two">•</h3>
+                        </div>
+                        <div class="square"><p>18</p></div>
+                        <div class="square"><p>19</p>
+                            <h3 class="bullet-two">•</h3>
+                        </div>
+                        <div class="square"><p>20</p></div>
+                        <div class="square"><p>21</p></div>
+                        <div class="square"><p>22</p>
+                            <h3 class="bullet-one">•</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="square"><p>23</p></div>
+                        <div class="square"><p>24</p>
+                            <h3 class="bullet-two">•</h3>
+                        </div>
+                        <div class="square"><p>25</p></div>
+                        <div class="square"><p>26</p>
+                            <h3 class="bullet-two">•</h3>
+                            <h3 class="bullet-one">• •</h3>
+                        </div>
+                        <div class="square"><p>27</p></div>
+                        <div class="square"><p>28</p></div>
+                        <div class="square"></div>
+                    </div>
+                </div>
             </div>
 
             <div class="projects">
                 <h1>Projects</h1>
+                <div class="name-status">
+                  <h2>Name</h2>
+                  <h2>Status</h2>
+                </div>
                 <div class="project">
                     <a href="https://github.com/ianharris97/Either-Or.git" target="_blank">Either Or</a>
                     <h3>Completed</h3>
                 </div>
+                <hr>
                 <div class="project">
                     <a href="https://github.com/Tech901/working-with-tables-ianharris97" target="_blank">Working With Tables</a>
                     <h3>Completed</h3>
                 </div>
+                <hr>
                 <div class="project">
                     <a href="https://github.com/ianharris97/Dashboard.git" target="_blank">Dashboard</a>
+                    <h3>In-progress</h3>
+                </div>
+                <hr>
+                <div class="project">
+                    <a href="https://github.com/ianharris97/Dashboard.git" target="_blank">Portfolio</a>
                     <h3>In-progress</h3>
                 </div>
             </div>
